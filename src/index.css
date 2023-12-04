@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
 }
 
 code {
@@ -13,16 +14,35 @@ code {
 }
 
 
+.header {
+  position: fixed;
+  display: flex;
+  justify-content:space-around;
+  top: 0;
+  height:20%;
+  background: gray;
+  width: 100%;
+}
 
-@media screen and (max-width: 800px) {
-
+.search-books {
+  position:relative;
 }
 
 
-.header {
-  position: fixed;
-  top: 0;
-  height:20%;
-  background: black;
-  width: 100%;
+@media screen and (max-width: 1500px){
+  .header {
+    background: gray;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .header {
+    background: orangered;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    background: blueviolet;
+  }
 }
