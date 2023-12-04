@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+@media screen and (max-width: 800px) {
+
+}
+
+
+.header {
+  position: fixed;
+  top: 0;
+  height:20%;
+  background: black;
+  width: 100%;
+}
