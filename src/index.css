@@ -40,7 +40,7 @@ code {
   border: solid black 1px;
 } */
 
-@media screen and (max-width: 1500px){
+/* @media screen and (max-width: 1500px){
   .header {
     background: gray;
   }
@@ -50,7 +50,7 @@ code {
   .header {
     background: orangered;
   }
-}
+} */
 
 @media screen and (max-width: 800px) {
   .header {
@@ -60,7 +60,7 @@ code {
     justify-content:flex-start;
     flex-wrap: wrap;
     top: 0;
-    height:8%;
+    height:15%;
     background: blueviolet;
     width: 100%;
     border: solid black 2px;
@@ -72,19 +72,58 @@ code {
     margin-top: 1em;
     margin-right: 1em;
     margin-left: 1em;
-    height: 50%;
-    width: 100%;
-    font-size: 30px;
+    height: 30%;
+    width: 8em;
+    font-size: 3em;
     color: black;
   }
 
     /* Main divs */
     .search-books, .my-books-div, .home-div {
+      display: block;
       z-index: 1;
       position:relative;
       width: 100em;
       height: 30%;
-      top: 10em;
+      top: 20em;
       border: solid black 2px;
+    }
+
+    .search-form {
+      border: solid black 2px;
+    }
+
+    .book-list-nav {
+      border: solid black 2px;
+    }
+    .book-list {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .book {
+      margin-left: 50px;
+      margin-right: 50px;
+      padding: 50px;
+    }
+
+    .book-image {
+      width: 300px;
+      height: 350px;
+    }
+
+    .search-bar {
+      width: 50%;
+      height: 70%;
+      font-size: 50px;
+    }
+
+    .search-button {
+
+      width: 50%;
+      height: 70%;
+      font-size: 50px;
     }
 }

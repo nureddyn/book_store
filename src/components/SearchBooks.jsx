@@ -44,12 +44,12 @@ export default function SearchBooks() {
         <input className="search-bar" onChange={handleSetTerm}/>
         <button type="submit" onClick={handleSubmit} className="search-button">Search</button>
       </form>
-      <div className="book-list">
-        <ul>
+      <div className="book-list-nav">
+        <ul className="book-list">
           {bookList ? bookList.map((book, index) => {
-            return <li key={index}>
+            return <li className="book" key={index}>
               {book.volumeInfo && book.volumeInfo.imageLinks && (
-                <img src={book.volumeInfo.imageLinks.smallThumbnail} />)}
+                <img className="book-image" src={book.volumeInfo.imageLinks.smallThumbnail} />)}
               </li>
           }) : "no data"}
         </ul>
