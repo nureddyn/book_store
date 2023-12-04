@@ -9,6 +9,9 @@ export default function Header() {
       <Link to="/search">
         <div className="search-link">Search Books</div>
       </Link>
+      <Link to="/mybooks">
+        <div className="books-link">My Books</div>
+      </Link>
     </div>
   )
 }

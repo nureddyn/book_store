@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function MyBooks() {
   return (
-    <div>MyBooks</div>
+    <div className='my-books-div'>MyBooks</div>
   )
 }
