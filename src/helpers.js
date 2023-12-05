@@ -20,7 +20,8 @@ export function buildBooks(dataList) {
         book.volumeInfo.authors,
         book.volumeInfo.averageRating,
         image,
-        amount
+        amount,
+        book.volumeInfo.infoLink
         );
     bookList.push(newBook);
   });

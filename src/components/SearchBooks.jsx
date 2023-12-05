@@ -59,7 +59,8 @@ export default function SearchBooks() {
       <div className="book-list-nav">
         <ul className="book-list">
           {bookList ? bookList.map((book, index) => {
-            return <li className="book" key={index}>
+            return (
+            <li className="book" key={index}>
               {book.volumeInfo && book.volumeInfo.imageLinks && (
                 <>
                   <a target="_blank" href={book.volumeInfo.infoLink}>
@@ -73,7 +74,7 @@ export default function SearchBooks() {
                 )}
                 <button className={`save-book_${book.volumeInfo.title}`}
                 onClick={e => handleFavorites(e)}>Add to favorites</button>
-              </li>
+            </li>)
           }) : ""}
         </ul>
       </div>

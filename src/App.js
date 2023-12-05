@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import SearchBooks from "./components/SearchBooks";
-import MyBooks from "./components/MyBooks"
+import Favorites from "./components/Favorites"
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/search" element={<SearchBooks />}/>
-        <Route path="/mybooks" element={<MyBooks />}/>
+        <Route path="/favorites" element={<Favorites />}/>
       </Routes>
     </div>
   );
