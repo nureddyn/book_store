@@ -69,12 +69,8 @@ export default function SearchBooks() {
                   {book.saleInfo.listPrice && <h4 className="price">${book.saleInfo.listPrice.amount}</h4>}
                 </>
                 )}
-                <button className={`save-book_${book.volumeInfo.title}`} value={[
-                  book.volumeInfo.title,
-                  book.volumeInfo.authors,
-                  book.volumeInfo.averageRating,
-                  // book.saleInfo.listPrice.amount
-                ]} onClick={e => handleFavorites(e)}>Add to favorites</button>
+                <button className={`save-book_${book.volumeInfo.title}`}
+                onClick={e => handleFavorites(e)}>Add to favorites</button>
               </li>
           }) : ""}
         </ul>
