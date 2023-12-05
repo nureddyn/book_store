@@ -262,6 +262,16 @@ code {
       height: 350px;
     }
 
+    .book-title {
+      text-wrap:wrap;
+      font-size: 30px;
+      width: 60%;
+    }
+
+    .rating, .price {
+      font-size: 30px;
+    }
+
     .search-bar {
       width: 50%;
       height: 70%;

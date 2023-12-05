@@ -49,7 +49,14 @@ export default function SearchBooks() {
           {bookList ? bookList.map((book, index) => {
             return <li className="book" key={index}>
               {book.volumeInfo && book.volumeInfo.imageLinks && (
-                <img className="book-image" src={book.volumeInfo.imageLinks.smallThumbnail} />)}
+                <>
+                  <img className="book-image" src={book.volumeInfo.imageLinks.smallThumbnail} />
+                  <h4 className="book-title">{book.volumeInfo.title}</h4>
+                  {book.volumeInfo.averageRating ? <p className="rating">{book.volumeInfo.averageRating}⭐</p>
+                  : "No rated"}
+                  {book.saleInfo.listPrice && <h4 className="price">${book.saleInfo.listPrice.amount}</h4>}
+                </>
+                )}
               </li>
           }) : ""}
         </ul>
