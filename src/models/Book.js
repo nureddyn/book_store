@@ -1,9 +1,9 @@
 class Book {
-    constructor(title, author, genre, rating) {
+    constructor(title, author, rating) {
         this.title = title;
         this.author = author;
-        this.genre = genre;
         this.rating = rating;
+        // this.price = price;
     }
 }
 

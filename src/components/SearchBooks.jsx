@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import buildBooks from "../helpers";
+import { buildBooks, addToFavorites } from "../helpers";
+import favoriteBooks from "../models/bookList";
 
 export default function SearchBooks() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -19,14 +20,24 @@ export default function SearchBooks() {
     }
   }
 
-  useEffect(() => {
-    // TODO: Create book objects:
+  const handleFavorites = (e) => {
     if (bookList) {
       const listOfBooks = buildBooks(bookList);
-      // console.log(listOfBooks)
-      // console.log(bookList)
+      const title = e.target.className.slice(10);
+      addToFavorites(title, listOfBooks);
+      console.log(favoriteBooks);
     }
-  }, [bookList]);
+  };
+  
+  // useEffect(() => {
+  //   // TODO: Create book objects:
+  //   if (bookList) {
+  //     // const listOfBooks = buildBooks(bookList);
+  //     // console.log(listOfBooks)
+  //     // console.log(bookList)
+  //   }
+
+  // }, [bookList]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +48,7 @@ export default function SearchBooks() {
     setSearchTerm(e.target.value)
     // console.log(searchTerm);
   };
+
 
   return (
     <div className='search-books'>
@@ -57,6 +69,12 @@ export default function SearchBooks() {
                   {book.saleInfo.listPrice && <h4 className="price">${book.saleInfo.listPrice.amount}</h4>}
                 </>
                 )}
+                <button className={`save-book_${book.volumeInfo.title}`} value={[
+                  book.volumeInfo.title,
+                  book.volumeInfo.authors,
+                  book.volumeInfo.averageRating,
+                  // book.saleInfo.listPrice.amount
+                ]} onClick={e => handleFavorites(e)}>Add to favorites</button>
               </li>
           }) : ""}
         </ul>

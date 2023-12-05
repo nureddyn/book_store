@@ -1,6 +1,7 @@
 import Book from "./models/Book";
+import favoriteBooks from "./models/bookList";
 
-export default function buildBooks(dataList) {
+export function buildBooks(dataList) {
   let bookList = [];
   // const keys = Object.keys(dataList);
   dataList.map((book, index) => {
@@ -14,3 +15,13 @@ export default function buildBooks(dataList) {
   });
   return bookList;
 }
+
+export function addToFavorites(title, bookList) {
+  bookList.map(book => {
+    if (book.title === title) {
+      favoriteBooks.push(book);
+      // return;
+    }
+  });
+  return favoriteBooks;
+};
