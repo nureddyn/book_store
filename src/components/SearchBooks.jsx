@@ -51,7 +51,7 @@ export default function SearchBooks() {
               {book.volumeInfo && book.volumeInfo.imageLinks && (
                 <img className="book-image" src={book.volumeInfo.imageLinks.smallThumbnail} />)}
               </li>
-          }) : "no data"}
+          }) : ""}
         </ul>
       </div>
     </div>
