@@ -7,11 +7,11 @@ export default function Favorites() {
         <ul className="book-list">
           {favoriteBooks.map((book, index) => {
             return (
-              <li className="book" key={index}>
-                <a target="_blank" href={book.link}>
-                  <img src={book.image}/>
+              <li className="favorite-book" key={index}>
+                <a className="book-anchor" target="_blank" href={book.link}>
+                  <img className="favorite-img" src={book.image}/>
                 </a>
-                <a target="_blank" href={book.link}>
+                <a className="book-anchor" target="_blank" href={book.link}>
                   <h4 className="book-title">{book.title}</h4>
                 </a>
                 <p className="rating">{book.rating}⭐</p>
