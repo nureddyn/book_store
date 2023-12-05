@@ -203,14 +203,23 @@ code {
     }
 
     .book {
-      margin-left: 50px;
-      margin-right: 50px;
-      padding: 50px;
+      margin-left: 5em;
+      width: 220px;
     }
 
     .book-image {
       width: 300px;
       height: 350px;
+    }
+
+    .book-title {
+      text-wrap:wrap;
+      font-size: 30px;
+      width: 100%;
+    }
+
+    .rating, .price {
+      font-size: 30px;
     }
 
     .search-bar {
@@ -297,6 +306,7 @@ code {
     /* .book-list-nav {
       border: solid black 2px;
     } */
+    
     .book-list {
       display: flex;
       align-items: flex-start;
@@ -305,9 +315,8 @@ code {
     }
 
     .book {
-      margin-left: 50px;
-      margin-right: 50px;
-      padding: 50px;
+      margin-left: 5em;
+      width: 220px;
     }
 
     .book-image {
@@ -318,7 +327,7 @@ code {
     .book-title {
       text-wrap:wrap;
       font-size: 30px;
-      width: 40%;
+      width: 100%;
     }
 
     .rating, .price {
@@ -365,7 +374,7 @@ code {
     justify-content:flex-start;
     flex-wrap: wrap;
     top: 0;
-    height:25%;
+    height:20%;
     background: blueviolet;
   }
 }
