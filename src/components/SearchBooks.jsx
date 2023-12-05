@@ -62,10 +62,12 @@ export default function SearchBooks() {
             return <li className="book" key={index}>
               {book.volumeInfo && book.volumeInfo.imageLinks && (
                 <>
-                  <img className="book-image" src={book.volumeInfo.imageLinks.smallThumbnail} />
-                  <h4 className="book-title">{book.volumeInfo.title}</h4>
+                  <a target="_blank" href={book.volumeInfo.infoLink}>
+                    <img className="book-image" src={book.volumeInfo.imageLinks.smallThumbnail} />
+                  </a>
+                  <a target="_blank" href={book.volumeInfo.infoLink}><h4 className="book-title">{book.volumeInfo.title}</h4></a>
                   {book.volumeInfo.averageRating ? <p className="rating">{book.volumeInfo.averageRating}⭐</p>
-                  : "No rated"}
+                  : <p className="rating">No rated</p>}
                   {book.saleInfo.listPrice && <h4 className="price">${book.saleInfo.listPrice.amount}</h4>}
                 </>
                 )}
