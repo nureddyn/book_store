@@ -71,6 +71,7 @@ export default function SearchBooks() {
         <button type="submit" onClick={handleSubmit} className="search-button">Search</button>
       </form>
       <Modal open={isModalOpen} close={closeModal}>
+          <h2>Description</h2>
           <p>{currentDescription}</p>
        </Modal>
       <div className="book-list-nav">
@@ -98,7 +99,7 @@ export default function SearchBooks() {
 
                 <button value={book.volumeInfo.description} className="open-modal"
                 ref={reviewButton} onClick={openModal}>
-                  Review
+                  Description
                 </button>
             </li>)
           }) : ""}
