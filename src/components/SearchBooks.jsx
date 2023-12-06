@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { buildBooks, addToFavorites } from "../helpers";
 import favoriteBooks from "../models/bookList";
+import Modal from "./Modal";
 
 export default function SearchBooks() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -45,8 +46,21 @@ export default function SearchBooks() {
   };
 
   const handleSetTerm = (e) => {
-    setSearchTerm(e.target.value)
+    setSearchTerm(e.target.value);
     // console.log(searchTerm);
+  };
+
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const reviewButton = useRef(null);
+  const [currentDescription, setcurrentDescription] = useState("");
+
+  const openModal = (e) => {
+    setcurrentDescription(e.target.value);
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
 
@@ -56,6 +70,9 @@ export default function SearchBooks() {
         <input placeholder="Search a book" className="search-bar" onChange={handleSetTerm}/>
         <button type="submit" onClick={handleSubmit} className="search-button">Search</button>
       </form>
+      <Modal open={isModalOpen} close={closeModal}>
+          <p>{currentDescription}</p>
+       </Modal>
       <div className="book-list-nav">
         <ul className="book-list">
           {bookList ? bookList.map((book, index) => {
@@ -66,14 +83,23 @@ export default function SearchBooks() {
                   <a target="_blank" href={book.volumeInfo.infoLink}>
                     <img className="book-image" src={book.volumeInfo.imageLinks.smallThumbnail} />
                   </a>
-                  <a target="_blank" href={book.volumeInfo.infoLink}><h4 className="book-title">{book.volumeInfo.title}</h4></a>
-                  {book.volumeInfo.averageRating ? <p className="rating">{book.volumeInfo.averageRating}⭐</p>
-                  : <p className="rating">No rated</p>}
-                  {book.saleInfo.listPrice && <h4 className="price">${book.saleInfo.listPrice.amount}</h4>}
+                  <a target="_blank" href={book.volumeInfo.infoLink}>
+                    <h4 className="book-title">{book.volumeInfo.title}</h4>
+                  </a>
+                  {book.volumeInfo.averageRating ?
+                  <p className="rating">{book.volumeInfo.averageRating}⭐</p> :
+                  <p className="rating">No rated</p>}
+                  {book.saleInfo.listPrice &&
+                  <h4 className="price">${book.saleInfo.listPrice.amount}</h4>}
                 </>
                 )}
                 <button className={`save-book_${book.volumeInfo.title}`}
                 onClick={e => handleFavorites(e)}>Add to favorites</button>
+
+                <button value={book.volumeInfo.description} className="open-modal"
+                ref={reviewButton} onClick={openModal}>
+                  Review
+                </button>
             </li>)
           }) : ""}
         </ul>
