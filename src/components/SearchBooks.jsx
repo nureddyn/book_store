@@ -28,6 +28,7 @@ export default function SearchBooks() {
       addToFavorites(title, listOfBooks);
       console.log(favoriteBooks);
     }
+    openModal(e);
   };
   
   // useEffect(() => {
@@ -52,11 +53,12 @@ export default function SearchBooks() {
 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const reviewButton = useRef(null);
   const [currentDescription, setcurrentDescription] = useState("");
 
   const openModal = (e) => {
-    setcurrentDescription(e.target.value);
+    if (e.target.innerHTML === "Add to favorites") {
+      setcurrentDescription(["Added to favorites", ""]);
+    } else setcurrentDescription(["Description", e.target.value]);
     setIsModalOpen(true);
   };
   const closeModal = () => {
@@ -71,8 +73,8 @@ export default function SearchBooks() {
         <button type="submit" onClick={handleSubmit} className="search-button">Search</button>
       </form>
       <Modal open={isModalOpen} close={closeModal}>
-          <h2>Description</h2>
-          <p>{currentDescription}</p>
+          <h2>{currentDescription[0]}</h2>
+          <p>{currentDescription[1]}</p>
        </Modal>
       <div className="book-list-nav">
         <ul className="book-list">
@@ -97,8 +99,7 @@ export default function SearchBooks() {
                 <button className={`save-book_${book.volumeInfo.title}`}
                 onClick={e => handleFavorites(e)}>Add to favorites</button>
 
-                <button value={book.volumeInfo.description} className="open-modal"
-                ref={reviewButton} onClick={openModal}>
+                <button value={book.volumeInfo.description} className="open-modal" onClick={openModal}>
                   Description
                 </button>
             </li>)
