@@ -22,13 +22,13 @@ export default function SearchBooks() {
   }
 
   const handleFavorites = (e) => {
+    openModal(e);
     if (bookList) {
       const listOfBooks = buildBooks(bookList);
       const title = e.target.className.slice(10);
       addToFavorites(title, listOfBooks);
       console.log(favoriteBooks);
     }
-    openModal(e);
   };
   
   // useEffect(() => {
@@ -57,7 +57,9 @@ export default function SearchBooks() {
 
   const openModal = (e) => {
     if (e.target.innerHTML === "Add to favorites") {
-      setcurrentDescription(["Added to favorites", ""]);
+      if (!favoriteBooks.some(book => book.title === e.target.className.slice(10))) {
+        setcurrentDescription(["Added to favorites", ""]);
+      } else setcurrentDescription(["The book is already in favorites", ""]);
     } else setcurrentDescription(["Description", e.target.value]);
     setIsModalOpen(true);
   };

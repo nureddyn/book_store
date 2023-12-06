@@ -15,7 +15,7 @@ export default function Favorites() {
                   <h4 className="book-title">{book.title}</h4>
                 </a>
                 <p className="rating">{book.rating}⭐</p>
-                <h4 className="price">${book.price}</h4>
+                <h4 className="price">{isNaN(book.price) ? `${book.price}` : `$${book.price}`}</h4>
               </li>
             )
           })}

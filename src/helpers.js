@@ -13,7 +13,7 @@ export function buildBooks(dataList) {
     } else image = 'No image';
     if (book.saleInfo.listPrice && book.saleInfo.listPrice.amount) {
       amount = book.saleInfo.listPrice.amount;
-    } else amount = 'No value';
+    } else amount = 'Value not available';
 
     const newBook = new Book(
         book.volumeInfo.title,
