@@ -88,8 +88,11 @@ a {
 .search-books,
 .favorites-div,
 .home-div {
+  margin-top: 5em;
   margin-bottom: 20px;
+  text-align: center;
 }
+
 
 
 .favorite-book {

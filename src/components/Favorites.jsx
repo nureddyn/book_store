@@ -3,8 +3,8 @@ import favoriteBooks from "../models/bookList";
 export default function Favorites() {
   return (
     <>
-      <h1 className="fav-h">Favorites</h1>
       <div className="favorites-div">
+        <h1 className="fav-h">Favorites</h1>
         <div className="favorites">
           <ul className="book-list">
             {favoriteBooks.map((book, index) => {
