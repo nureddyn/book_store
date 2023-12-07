@@ -14,6 +14,11 @@ Welcome to the React Book Store App! This web application allows users to search
 - Google Books API: Provides access to a vast collection of book information.
 - CSS: Styling for a visually appealing user interface.
 
+
+### Layout
+
+![Alt text](public/Layout.png)
+
 ### Getting Started
 Prerequisites
 Node.js and npm installed on your machine.
