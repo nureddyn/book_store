@@ -27,6 +27,19 @@ code {
     width: 100%;
     border: solid black 2px;
   }
+
+  h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .home-h {
+    margin-left: 11.5em;
+  }
+
+  .fav-h {
+    margin-top: 3.8em;
+  }
   
   /* Header Divs */
   .home-link, .search-link, .books-link {
@@ -41,74 +54,74 @@ code {
   }
 
     /* Main divs */
-    .search-books, .favorites-div, .home-div {
-      display: block;
-      z-index: 1;
-      position:relative;
-      width: 98%;
-      height: 30%;
-      top: 15em;
-      /* border: solid black 2px; */
-    }
+  .search-books, .favorites-div, .home-div {
+    display: block;
+    z-index: 1;
+    position:relative;
+    width: 98%;
+    height: 30%;
+    top: 10em;
+    /* border: solid black 2px; */
+  }
 
-    .search-form {
-      display: flex;
-      width: 1300px;
-      /* border: solid black 2px; */
-    }
+  .search-form {
+    display: flex;
+    width: 1300px;
+    /* border: solid black 2px; */
+  }
 
-    .book-list {
-      list-style: none;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+  .book-list {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
-    .book {
-      margin-left: 50px;
-      margin-right: 50px;
-      padding: 50px;
-    }
+  .book {
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 50px;
+  }
 
-    .book-image {
-      width: 180px;
-      height: 200px;
-    }
+  .book-image {
+    width: 180px;
+    height: 200px;
+  }
 
-    .search-bar {
-      width: 50%;
-      height: 70%;
-      font-size: 50px;
-    }
+  .search-bar {
+    width: 50%;
+    height: 70%;
+    font-size: 50px;
+  }
 
-    .search-button {
+  .search-button {
 
-      width: 50%;
-      height: 70%;
-      font-size: 50px;
-    }
-    a:link {
-      text-decoration: none;
-      color: black;
-    }
+    width: 50%;
+    height: 70%;
+    font-size: 50px;
+  }
+  a:link {
+    text-decoration: none;
+    color: black;
+  }
 
-    .favorite-book {
-      margin-left: 5em;
-      width: 220px;
-    }
+  .favorite-book {
+    margin-left: 5em;
+    width: 220px;
+  }
 
-    .favorite-img {
-      width: 200px;
-    }
+  .favorite-img {
+    width: 200px;
+  }
 
-    .rating, .price, .book-anchor {
-      width: 100px;
-    }
-    .book-anchor {
-      width: 10px;
-      display:contents;
-    }
+  .rating, .price, .book-anchor {
+    width: 100px;
+  }
+  .book-anchor {
+    width: 10px;
+    display:contents;
+  }
 
 
   .modal-overlay {
@@ -164,6 +177,15 @@ code {
     color: black;
   }
 
+  h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .home-h {
+    margin-left: 0em;
+  }
+
     /* Main divs */
   .search-books, .favorites-div, .home-div {
     display: block;
@@ -171,7 +193,7 @@ code {
     position:relative;
     width: 100em;
     height: 30%;
-    top: 15em;
+    top: 10em;
     /* border: solid black 2px; */
   }
 
@@ -289,7 +311,7 @@ code {
       position:relative;
       width: 100em;
       height: 30%;
-      top: 22em;
+      top: 15em;
       /* border: solid black 2px; */
     }
 
@@ -389,6 +411,16 @@ code {
     top: 0;
     height:20%;
     background: blueviolet;
+  }
+
+  .search-books, .favorites-div, .home-div {
+    /* display: block;
+    z-index: 1;
+    position:relative;
+    width: 100em;
+    height: 30%; */
+    top: 15em;
+    /* border: solid black 2px; */
   }
 
    .modal-overlay {

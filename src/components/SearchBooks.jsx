@@ -70,6 +70,7 @@ export default function SearchBooks() {
 
   return (
     <div className='search-books'>
+      <h1>Search Books</h1>
       <form className="search-form" onSubmit={handleSubmit}>
         <input placeholder="Search a book" className="search-bar" onChange={handleSetTerm}/>
         <button type="submit" onClick={handleSubmit} className="search-button">Search</button>
