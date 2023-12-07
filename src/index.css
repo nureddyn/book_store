@@ -157,9 +157,9 @@ code {
     position: fixed;
     display: flex;
     justify-content:flex-start;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     top: 0;
-    height:23%;
+    height:auto;
     background: orangered;
     width: 100%;
     /* border: solid black 2px; */
@@ -284,11 +284,11 @@ code {
     position: fixed;
     display: flex;
     justify-content:flex-start;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     top: 0;
-    height:18%;
+    height:auto;
     background: blueviolet;
-    width: 100%;
+    /* width: auto; */
     border: solid black 2px;
   }
   
@@ -407,9 +407,10 @@ code {
     position: fixed;
     display: flex;
     justify-content:flex-start;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     top: 0;
     height:20%;
+    width: 100%;
     background: blueviolet;
   }
 
@@ -440,5 +441,38 @@ code {
     position: relative;
     top: 15px;
     cursor: pointer;
+  }
+}
+
+
+@media screen and (max-width: 309px) {
+  .header {
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    top: 0;
+    height:22%;
+    width: 100%;
+    background: blueviolet;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  .search-books, .favorites-div, .home-div {
+    display: block;
+    z-index: 1;
+    position:relative;
+    width: 100em;
+    height: 30%;
+    top: 15em;
+    /* border: solid black 2px; */
+  }
+
+  .book-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 }
