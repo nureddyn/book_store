@@ -16,8 +16,14 @@ Welcome to the React Book Store App! This web application allows users to search
 
 
 ### Layout
-
+##### Home Page
 ![Alt text](public/Layout.png)
+
+#### Search Page
+![Alt text](public/Search.png)
+
+#### Favorites Page
+![Alt text](public/Favorites.png)
 
 ### Getting Started
 Prerequisites
