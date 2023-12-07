@@ -42,6 +42,11 @@ nav a {
   font-size: 18px;
 }
 
+a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
 .sign-button {
   background: #3498db;
   border: none;
@@ -57,6 +62,10 @@ nav a {
 
 .sign-button:hover {
   background: #2980b9;
+}
+
+.separator {
+  width: 10%;
 }
 
 .container {
@@ -81,6 +90,7 @@ nav a {
 .home-div {
   margin-bottom: 20px;
 }
+
 
 .favorite-book {
   margin-left: 5em;
@@ -176,7 +186,7 @@ nav a {
 
 @media screen and (max-width: 768px) {
   .header {
-    flex-direction: column;
+    flex-wrap: wrap;
     height: auto;
   }
 

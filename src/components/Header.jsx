@@ -27,6 +27,7 @@ export default function Header() {
           <Link to="/favorites">
             <div className="books-link">Favorites</div>
           </Link>
+          <div className="separator"></div>
         </>
       }
     </div>
