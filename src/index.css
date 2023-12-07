@@ -26,10 +26,10 @@ body {
   box-sizing: border-box;
 }
 
-.logo {
+/* .logo {
   width: 50px;
   height: auto;
-}
+} */
 
 nav {
   display: flex;
