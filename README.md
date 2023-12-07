@@ -1,7 +1,7 @@
 ## React Book Store (Search App)
 
 ### Overview
-Welcome to the React Book Search App! This web application allows users to search for books using the Google Books API. Users can view details of each book, including its image, title, description, and rating. Additionally, the app enables users to save their favorite books for future reference.
+Welcome to the React Book Store App! This web application allows users to search for books using the Google Books API. Users can view details of each book, including its image, title, description, and rating. Additionally, the app enables users to save their favorite books for future reference.
 
 ### Features
 - Google Books API Integration: Utilizes the Google Books API to fetch book data based on user searches.
