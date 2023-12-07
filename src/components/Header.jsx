@@ -8,6 +8,7 @@ export default function Header() {
 
   return (
     <div className="header">
+      <div className="logo"></div>
       {!signedIn ?
         <div className="btn">
           <SignBtn />

@@ -1,478 +1,203 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
-  /* align-items: flex-start; */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f2f2f2;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #3498db;
+  border: solid 2px #000;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.sign-button {
+  background: #3498db;
+  border: none;
+  font-weight: 800;
+  padding: 10px 20px;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.sign-button:hover {
+  background: #2980b9;
+}
+
+.container {
+  margin-top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.main-content {
+  flex: 2;
+  max-width: 800px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.search-books,
+.favorites-div,
+.home-div {
+  margin-bottom: 20px;
+}
+
+.favorite-book {
+  margin-left: 5em;
+  width: 220px;
+}
+
+.favorite-book:hover {
+  transform: scale(1.05);
+}
+
+.favorite-img {
+  width: 200px;
+}
+
+.book-list {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.book {
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 50px;
+}
+
+.book-image {
+  width: 180px;
+  height: 200px;
 }
 
 
-@media screen and (max-width: 1500px){
+.book:hover {
+  transform: scale(1.05);
+}
+
+
+.search-bar,
+.search-button {
+  width: 50%;
+  height: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.search-bar {
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-button {
+  background: #3498db;
+  border: none;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.search-button:hover {
+  background: #2980b9;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 4;
+}
+
+.close-button {
+  position: relative;
+  top: 15px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
   .header {
-    z-index: 2;
-    position: fixed;
-    display: flex;
-    justify-content:flex-start;
-    top: 0;
-    height:23%;
-    background: gray;
-    width: 100%;
-    border: solid black 2px;
+    flex-direction: column;
+    height: auto;
   }
 
-  h1 {
-    font-size: 50px;
-    text-align: center;
+  nav {
+    margin-top: 20px;
   }
 
-  .home-h {
-    margin-left: 11.5em;
+  .sign-button {
+    margin-top: 20px;
   }
 
-  .fav-h {
-    margin-top: 3.8em;
-  }
-  
-  /* Header Divs */
-  .home-link, .search-link, .books-link {
-    /* border: solid black 1px; */
-    margin-top: 1em;
-    margin-right: 2em;
-    margin-left: 3.5em;
-    height: 30%;
-    width: 8em;
-    font-size: 2em;
-    color: black;
+  .container {
+    margin-top: 20px;
   }
 
-    /* Main divs */
-  .search-books, .favorites-div, .home-div {
-    display: block;
-    z-index: 1;
-    position:relative;
-    width: 98%;
-    height: 30%;
-    top: 10em;
-    /* border: solid black 2px; */
-  }
-
-  .search-form {
-    display: flex;
-    width: 1300px;
-    /* border: solid black 2px; */
-  }
-
-  .book-list {
-    list-style: none;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  .main-content {
+    flex: 1;
+    max-width: 100%;
   }
 
   .book {
-    margin-left: 50px;
-    margin-right: 50px;
-    padding: 50px;
-  }
-
-  .book-image {
-    width: 180px;
-    height: 200px;
-  }
-
-  .search-bar {
-    width: 50%;
-    height: 70%;
-    font-size: 50px;
-  }
-
-  .search-button {
-
-    width: 50%;
-    height: 70%;
-    font-size: 50px;
-  }
-  a:link {
-    text-decoration: none;
-    color: black;
-  }
-
-  .favorite-book {
-    margin-left: 5em;
-    width: 220px;
-  }
-
-  .favorite-img {
-    width: 200px;
-  }
-
-  .rating, .price, .book-anchor {
-    width: 100px;
-  }
-  .book-anchor {
-    width: 10px;
-    display:contents;
-  }
-
-
-  .modal-overlay {
-    position: fixed;
-    top: 4.8em;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .modal {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-  }
-  
-  .close-button {
-    position: relative;
-    top: 15px;
-    cursor: pointer;
-  }
-}
-
-@media screen and (max-width: 1120px){
-  .header {
-    z-index: 2;
-    position: fixed;
-    display: flex;
-    justify-content:flex-start;
-    /* flex-wrap: wrap; */
-    top: 0;
-    height:auto;
-    background: orangered;
-    width: 100%;
-    /* border: solid black 2px; */
-  }
-  
-  /* Header Divs */
-  .home-link, .search-link, .books-link {
-    /* border: solid black 1px; */
-    margin-top: 1em;
-    margin-right: 2em;
-    margin-left: 1em;
-    height: 30%;
-    width: 8em;
-    font-size: 3em;
-    color: black;
-  }
-
-  h1 {
-    font-size: 50px;
-    text-align: center;
-  }
-
-  .home-h {
-    margin-left: 0em;
-  }
-
-    /* Main divs */
-  .search-books, .favorites-div, .home-div {
-    display: block;
-    z-index: 1;
-    position:relative;
-    width: 100em;
-    height: 30%;
-    top: 10em;
-    /* border: solid black 2px; */
-  }
-
-  .favorites {
-    display: flex;
-    justify-content: flex-start;
-    border: solid black 2px;
-    width: 100%;
-  }
-
-  .book-list {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .book {
-    margin-left: 5em;
-    width: 220px;
-  }
-
-  .book-image {
-    width: 300px;
-    height: 350px;
-  }
-
-  .book-title {
-    text-wrap:wrap;
-    font-size: 30px;
-    width: 100%;
-  }
-
-  .rating, .price {
-    font-size: 30px;
-  }
-
-  .search-bar {
-    width: 50%;
-    height: 70%;
-    font-size: 50px;
-  }
-
-  .search-button {
-
-    width: 50%;
-    height: 70%;
-    font-size: 50px;
-  }
-
-  .favorite-book {
-    margin-left: 5em;
-    width: 220px;
-  }
-
-  .favorite-img {
-    width: 200px;
-  }
-
-  .rating, .price, .book-anchor {
-    width: 100px;
-  }
-  .book-anchor {
-    width: 10px;
-    display:contents;
-  }
-
-  .modal {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-    font-size: 20px;
-  }
-  
-  .close-button {
-    position: relative;
-    top: 15px;
-    cursor: pointer;
-  }
-
-}
-
-@media screen and (max-width: 800px) {
-  .header {
-    z-index: 2;
-    position: fixed;
-    display: flex;
-    justify-content:flex-start;
-    /* flex-wrap: wrap; */
-    top: 0;
-    height:auto;
-    background: blueviolet;
-    /* width: auto; */
-    border: solid black 2px;
-  }
-  
-  /* Header Divs */
-  .home-link, .search-link, .books-link {
-    /* border: solid black 1px; */
-    margin-top: 1em;
-    margin-right: 1em;
-    margin-left: 1em;
-    height: 30%;
-    width: 8em;
-    font-size: 3em;
-    color: black;
-  }
-
-    /* Main divs */
-    .search-books, .favorites-div, .home-div {
-      display: block;
-      z-index: 1;
-      position:relative;
-      width: 100em;
-      height: 30%;
-      top: 15em;
-      /* border: solid black 2px; */
-    }
-
-    .favorites {
-      display: flex;
-      justify-content: flex-start;
-      border: solid black 2px;
-      width: 100%;
-      height: 30%;
-    }
-
-    .book-list {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .book {
-      margin-left: 5em;
-      width: 220px;
-    }
-
-    .book-image {
-      width: 300px;
-      height: 350px;
-    }
-
-    .book-title {
-      text-wrap:wrap;
-      font-size: 30px;
-      width: 100%;
-    }
-
-    .rating, .price {
-      font-size: 30px;
-    }
-
-    .search-bar {
-      width: 50%;
-      height: 70%;
-      font-size: 50px;
-    }
-
-    .search-button {
-
-      width: 50%;
-      height: 70%;
-      font-size: 50px;
-    }
-
-    .favorite-book {
-      margin-left: 5em;
-      width: 220px;
-    }
-
-    .favorite-img {
-      width: 200px;
-    }
-
-    .rating, .price, .book-anchor {
-      width: 100px;
-    }
-    .book-anchor {
-      width: 10px;
-      display:contents;
-    }
-
-  .modal-overlay {
-    top: 5em;
-  }
-
-  .modal {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-    font-size: 25px;
-  }
-  
-  .close-button {
-    position: relative;
-    top: 20px;
-    cursor: pointer;
-  }
-
-}
-
-@media screen and (max-width: 600px) {
-  .header {
-    z-index: 2;
-    position: fixed;
-    display: flex;
-    justify-content:flex-start;
-    /* flex-wrap: wrap; */
-    top: 0;
-    height:20%;
-    width: 100%;
-    background: blueviolet;
-  }
-
-  .search-books, .favorites-div, .home-div {
-    /* display: block;
-    z-index: 1;
-    position:relative;
-    width: 100em;
-    height: 30%; */
-    top: 15em;
-    /* border: solid black 2px; */
-  }
-
-   .modal-overlay {
-    top: 6em;
-  }
-
-  .modal {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-    font-size: 28px;
-  }
-  
-  .close-button {
-    position: relative;
-    top: 15px;
-    cursor: pointer;
-  }
-}
-
-
-@media screen and (max-width: 309px) {
-  .header {
-    z-index: 2;
-    position: fixed;
-    display: flex;
-    justify-content:flex-start;
-    flex-wrap: wrap;
-    top: 0;
-    height:22%;
-    width: 100%;
-    background: blueviolet;
-  }
-}
-
-@media screen and (max-width: 394px) {
-  .search-books, .favorites-div, .home-div {
-    display: block;
-    z-index: 1;
-    position:relative;
-    width: 100em;
-    height: 30%;
-    top: 15em;
-    /* border: solid black 2px; */
-  }
-
-  .book-list {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    margin: 0 0 20px 0;
   }
 }
