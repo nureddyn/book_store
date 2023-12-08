@@ -1,22 +1,24 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { Context } from "../App";
+import { LogContext } from "../App";
+import LogBtn from "./LogBtn";
 import SignBtn from "./SignBtn";
 
 export default function Header() {
-  const [signedIn, setSignedIn] = useContext(Context);
+  const [logIn, setLogIn] = useContext(LogContext);
 
   return (
     <div className="header">
       <div className="logo"></div>
-      {!signedIn ?
+      {!logIn ?
         <div className="btn">
+          <LogBtn />
           <SignBtn />
         </div>
         :
         <> 
           <div className="btn">
-            <SignBtn />
+            <LogBtn />
           </div>
           <Link to="/">
             <div className="home-link">Home</div>
