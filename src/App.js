@@ -9,14 +9,14 @@ import CoverPage from "./components/CoverPage";
 export const LogContext = createContext();
 
 function App() {
-  const [signedIn, setSignedIn] = useState(false);
+  const [logIn, setLogIn] = useState(false);
 
   return (
     <div className="App">
-      <LogContext.Provider value={[signedIn, setSignedIn]} >
+      <LogContext.Provider value={[logIn, setLogIn]} >
         <Header />
 
-        {signedIn ? 
+        {logIn ? 
           <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/search" element={<SearchBooks />}/>
