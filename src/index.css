@@ -93,38 +93,7 @@ a {
   text-align: center;
 }
 
-.home-div {
-  /* margin-top: 0; */
-  display: block;
-  /* border: solid black 2px; */
-  width: 80em;
-}
 
-/* .home-h {
-  border: solid black 2px;
-} */
-.discounts {
-  display: flex;
-  justify-content: flex-start;
-  border: solid black 2px;
-  /* margin-top: 10em; */
-  width:79.9em;
-  height: 25em;
-  /* padding: 100%; */
-  /* background: violet; */
-}
-
-.disc-list {
-  width: 70em;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.disc-element {
-  width: 10em;
-  height: 10em;
-  padding: 2px;
-}
 
 .favorite-book {
   margin-left: 5em;
@@ -139,12 +108,17 @@ a {
   width: 200px;
 }
 
-.book-list {
+.book-list, .disc-list {
   list-style: none;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-wrap: wrap;
+}
+
+.disc-element {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .book {

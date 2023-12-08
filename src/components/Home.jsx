@@ -5,10 +5,10 @@ export default function Home() {
 
   const [bookList, setBookList] = useState(null);
   const getBooks = async (input) => {
-    const URL = "https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes";
-    
+    const URL = "https://www.googleapis.com/books/v1/volumes?q=*";
+    const maxResults = "maxResults=40";
     try {
-      const response = await fetch(`${URL}&key=${API_KEY}`);
+      const response = await fetch(`${URL}&key=${API_KEY}&${maxResults}`);
       const data = await response.json();
       // console.log(data);
       setBookList(data.items);
@@ -26,15 +26,24 @@ export default function Home() {
   }
   return (
     <div className='home-div'>
-      <h1 className='home-h'>Home</h1>
+      <h1 className='home-h'>Discounts</h1>
       <div className='discounts'>
         <ul className='disc-list'>
           {bookList ? bookList.map((book, index) => {
-            return (
-            <li className='disc-element' key={index}>
-              <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
-              <p>{book.volumeInfo.title}</p>
-            </li>)  
+
+            if (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail
+              && book.saleInfo.listPrice && Number(book.saleInfo.listPrice.amount) < 20
+              ) {
+              return (
+                <li className='disc-element' key={index}>
+                  <a target="_blank" href={book.volumeInfo.infoLink}>
+                    <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
+                  </a>
+                  <p>{book.volumeInfo.title}</p>
+                </li>)
+            }
+
+
         })
         : "no data"
       }
