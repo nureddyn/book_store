@@ -46,16 +46,18 @@ export default function Home() {
       }
         </div>
       </div>
-      <h1 className='home-h'>Best Sellers</h1>
+      <h1 className='home-h'>Populars</h1>
       <div className='bests-div'>
         {bookList ? bookList.map((book, index) => {
-          return (
-            <div className='best-book'>
-              <a target="_blank" href={book.volumeInfo.infoLink}>
-                <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
-              </a>
-            </div>
-            )
+          { if (Number(book.volumeInfo.averageRating) > 3) { 
+            return (
+              <div className='best-book'>
+                <a target="_blank" href={book.volumeInfo.infoLink}>
+                  <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
+                </a>
+              </div>
+              )}
+          }
         }) : "no data"}
       </div>
     </div>
