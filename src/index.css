@@ -91,9 +91,14 @@ a {
   margin-top: 5em;
   margin-bottom: 20px;
   text-align: center;
+
+  /* border: solid black 1px; */
 }
 
-
+.home-div {
+  /* background: pink; */
+  height: 2000px;
+}
 
 .favorite-book {
   margin-left: 5em;
@@ -108,17 +113,27 @@ a {
   width: 200px;
 }
 
-.book-list, .disc-list {
+.book-list, .disc-list, .bests-div {
   list-style: none;
   display: flex;
   align-items: flex-start;
   /* justify-content: space-between; */
+  /* flex-wrap: wrap; */
+}
+
+.disc-list {
+  display: flex;
   flex-wrap: wrap;
+  /* border: solid black 1px; */
+  height: 600px;
 }
 
 .disc-element {
+  /* border: solid black 1px; */
   margin-left: 5px;
   margin-right: 5px;
+  height: 40%;
+  width: 15%;
 }
 
 .book {
@@ -135,6 +150,19 @@ a {
 
 .book:hover {
   transform: scale(1.05);
+}
+
+.bests-div {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: solid black 1px; */
+  height: 600px;
+}
+
+.best-book {
+  /* border: solid black 1px; */
+  width:12%;
+  height: 40%;
 }
 
 
