@@ -55,6 +55,7 @@ export default function Home() {
                 <a target="_blank" href={book.volumeInfo.infoLink}>
                   <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
                 </a>
+                <p>{book.volumeInfo.title}</p>
               </div>
               )}
           }

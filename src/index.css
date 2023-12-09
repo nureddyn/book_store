@@ -117,8 +117,13 @@ a {
   list-style: none;
   display: flex;
   align-items: flex-start;
-  /* justify-content: space-between; */
-  /* flex-wrap: wrap; */
+  /* justify-content: space-between;
+  flex-wrap: wrap; */
+}
+
+.book-list {
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .disc-list {
