@@ -28,3 +28,37 @@ Welcome to the React Book Store App! This web application allows users to search
 ### Getting Started
 Prerequisites
 Node.js and npm installed on your machine.
+
+### Installation
+1. Clone the repository:
+
+``` bash
+git clone https://github.com/your-username/react-book-search-app.git
+cd react-book-search-app
+```
+2. Install dependencies:
+``` bash
+npm install
+npm install react-router-dom@6
+```
+3. Create a Google Books API key:
+- Visit the Google Cloud Console.
+- Create a new project and enable the Google Books API.
+- Generate an API key.
+- Copy the API key.
+
+4. Create a .env file in the project root and add your API key:
+
+``` env
+REACT_APP_API_KEY={your-api-key}
+```
+
+### Usage
+- Start the development server:
+``` bash
+npm start
+```
+- Open your browser and visit http://localhost:3000.
+- Use the search bar to enter keywords and find books.
+- View details of each book, including image, title, description, and rating.
+- Save your favorite books by clicking the "Add to favorites" button.
