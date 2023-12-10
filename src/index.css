@@ -26,10 +26,22 @@ body {
   box-sizing: border-box;
 }
 
-/* .logo {
-  width: 50px;
-  height: auto;
-} */
+.footer {
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #3498db;
+  border: solid 2px #000;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
 
 nav {
   display: flex;
@@ -64,9 +76,9 @@ a {
   background: #2980b9;
 }
 
-.separator {
+/* .separator {
   width: 10%;
-}
+} */
 
 .container {
   margin-top: 70px;
@@ -126,7 +138,7 @@ a {
 }
 
 .home-div {
-  /* background: pink; */
+  /* display: block; */
   height: 1000px;
 }
 
@@ -151,13 +163,23 @@ a {
   flex-wrap: wrap; */
 }
 
+
 .book-list {
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
+/* .discounts {
+  margin-bottom: 15em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: pink;
+} */
+
 .disc-list {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   /* border: solid black 1px; */
   height: 600px;
@@ -167,8 +189,8 @@ a {
   /* border: solid black 1px; */
   margin-left: 5px;
   margin-right: 5px;
-  height: 40%;
-  width: 15%;
+  /* height: 40%; */
+  /* width: 15%; */
 }
 
 .book {
@@ -188,11 +210,18 @@ a {
 }
 
 .bests-div {
-  display: flex;
-  flex-wrap: wrap;
-  /* border: solid black 1px; */
+  display: block;
+  /* flex-wrap: wrap; */
+  border: solid black 1px;
   height: 600px;
-  justify-content: center;
+  margin-top: 10%;
+  /* justify-content: center; */
+}
+
+.best-list {
+  display: flex;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
 }
 
 .best-book {

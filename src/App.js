@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import SearchBooks from "./components/SearchBooks";
 import Favorites from "./components/Favorites"
 import CoverPage from "./components/CoverPage";
+import Footer from "./components/Footer";
 
 export const LogContext = createContext();
 
@@ -24,6 +25,7 @@ function App() {
         </Routes> :
         <CoverPage />
         }
+        <Footer />
       </LogContext.Provider>
     </div>
   );

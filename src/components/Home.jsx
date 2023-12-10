@@ -36,23 +36,24 @@ export default function Home() {
               if (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail
                 && book.saleInfo.listPrice && Number(book.saleInfo.listPrice.amount) < 20 && book.saleInfo.listPrice
                 ) {
-                return (
-                  <div className='disc-element' key={index}>
-                    <a target="_blank" href={book.volumeInfo.infoLink}>
-                      <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
-                    </a>
-                    <p>{book.volumeInfo.title}</p>
+                    return (
+                      <div className='disc-element' key={index}>
+                        <a target="_blank" href={book.volumeInfo.infoLink}>
+                          <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
+                        </a>
+                        <p>{book.volumeInfo.title}</p>
 
-                    <p>${book.saleInfo.listPrice.amount}</p>
-                  </div>)
-              }
-          })
-          : "no data"
-        }
+                        <p>${book.saleInfo.listPrice.amount}</p>
+                      </div>)
+                  }
+            })
+            : "no data"
+          }
           </div>
         </div>
-        <h1 className='home-h'>Populars</h1>
-        <div className='bests-div'>
+        {/* <div className='bests-div'>
+          <h1 className='home-h'>Populars</h1>
+          <div className='best-list'>
           {bookList ? bookList.map((book, index) => {
             { if (Number(book.volumeInfo.averageRating) > 3 && book.saleInfo.listPrice) { 
               return (
@@ -66,7 +67,8 @@ export default function Home() {
                 )}
             }
           }) : "no data"}
-        </div>
+          </div>
+        </div> */}
       </div>
     </div>
   )
