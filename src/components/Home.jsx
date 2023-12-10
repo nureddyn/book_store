@@ -44,7 +44,6 @@ export default function Home() {
                     <p>{book.volumeInfo.title}</p>
 
                     <p>${book.saleInfo.listPrice.amount}</p>
-                    <p>{book.volumeInfo.categories}</p>
                   </div>)
               }
           })

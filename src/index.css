@@ -88,19 +88,30 @@ a {
 .home-container {
   display: flex;
 }
-.home-div {
+/* .home-div {
   border: solid black 1px;
-}
+} */
 
 .side-bar {
   margin-top: 5em;
   /* height: 50em; */
   width: 20em;
-  border: solid black 1px;
+  /* border: solid black 1px; */
 }
 
 .category-list {
   list-style: none;
+
+  padding: 15px;
+  padding-bottom: 30px;
+  width: 70%;
+  height: 25em;
+  overflow-y: auto;
+  overflow: scroll;
+}
+
+.category-element {
+  height: 4em;
 }
 
 .search-books,
