@@ -85,6 +85,20 @@ a {
   box-sizing: border-box;
 }
 
+.home-container {
+  display: flex;
+}
+/* .home-div {
+  border: solid black 1px;
+} */
+
+.side-bar {
+  margin-top: 5em;
+  /* height: 50em; */
+  width: 20em;
+  /* border: solid black 1px; */
+}
+
 .search-books,
 .favorites-div,
 .home-div {

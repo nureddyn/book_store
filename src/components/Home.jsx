@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Categories from './Categories';
 
 export default function Home() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -25,44 +26,47 @@ export default function Home() {
     console.log(bookList);
   }
   return (
-    <div className='home-div'>
-      <h1 className='home-h'>Discounts</h1>
-      <div className='discounts'>
-        <div className='disc-list'>
+    <div className='home-container'>
+      <Categories />
+      <div className='home-div'>
+        <h1 className='home-h'>Discounts</h1>
+        <div className='discounts'>
+          <div className='disc-list'>
+            {bookList ? bookList.map((book, index) => {
+              if (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail
+                && book.saleInfo.listPrice && Number(book.saleInfo.listPrice.amount) < 20 && book.saleInfo.listPrice
+                ) {
+                return (
+                  <div className='disc-element' key={index}>
+                    <a target="_blank" href={book.volumeInfo.infoLink}>
+                      <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
+                    </a>
+                    <p>{book.volumeInfo.title}</p>
+
+                    <p>${book.saleInfo.listPrice.amount}</p>
+                  </div>)
+              }
+          })
+          : "no data"
+        }
+          </div>
+        </div>
+        <h1 className='home-h'>Populars</h1>
+        <div className='bests-div'>
           {bookList ? bookList.map((book, index) => {
-            if (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail
-              && book.saleInfo.listPrice && Number(book.saleInfo.listPrice.amount) < 20 && book.saleInfo.listPrice
-              ) {
+            { if (Number(book.volumeInfo.averageRating) > 3 && book.saleInfo.listPrice) { 
               return (
-                <div className='disc-element' key={index}>
+                <div className='best-book'>
                   <a target="_blank" href={book.volumeInfo.infoLink}>
                     <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
                   </a>
                   <p>{book.volumeInfo.title}</p>
-
                   <p>${book.saleInfo.listPrice.amount}</p>
-                </div>)
+                </div>
+                )}
             }
-        })
-        : "no data"
-      }
+          }) : "no data"}
         </div>
-      </div>
-      <h1 className='home-h'>Populars</h1>
-      <div className='bests-div'>
-        {bookList ? bookList.map((book, index) => {
-          { if (Number(book.volumeInfo.averageRating) > 3 && book.saleInfo.listPrice) { 
-            return (
-              <div className='best-book'>
-                <a target="_blank" href={book.volumeInfo.infoLink}>
-                  <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
-                </a>
-                <p>{book.volumeInfo.title}</p>
-                <p>${book.saleInfo.listPrice.amount}</p>
-              </div>
-              )}
-          }
-        }) : "no data"}
       </div>
     </div>
   )
