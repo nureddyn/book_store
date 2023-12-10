@@ -158,6 +158,10 @@ a {
   flex-wrap: wrap;
 }
 
+.discounts {
+  height: fit-content;
+}
+
 .disc-list {
   display: flex;
   justify-content: space-around;
@@ -188,9 +192,9 @@ a {
 
 .bests-div {
   display: block;
-  border: solid black 1px;
-  height: 600px;
-  margin-top: 10%;
+  /* border: solid black 1px; */
+  height: fit-content;
+  /* margin-top: 10%; */
 }
 
 .best-list {
@@ -258,6 +262,13 @@ a {
   cursor: pointer;
 }
 
+
+@media screen and (max-width: 976px) {
+  .bests-div {
+    margin-top: 40%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .header {
     flex-wrap: wrap;
@@ -283,5 +294,9 @@ a {
 
   .book {
     margin: 0 0 20px 0;
+  }
+
+  .bests-div {
+    margin-top: 95%;
   }
 }

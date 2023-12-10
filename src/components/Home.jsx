@@ -51,7 +51,7 @@ export default function Home() {
           }
           </div>
         </div>
-        {/* <div className='bests-div'>
+        <div className='bests-div'>
           <h1 className='home-h'>Populars</h1>
           <div className='best-list'>
           {bookList ? bookList.map((book, index) => {
@@ -68,7 +68,7 @@ export default function Home() {
             }
           }) : "no data"}
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   )
