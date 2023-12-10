@@ -297,6 +297,28 @@ a {
   }
 
   .bests-div {
-    margin-top: 95%;
+    margin-top: 50%;
+  }
+}
+
+@media screen and (max-width: 742px) {
+  .bests-div {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 676px) {
+  .side-bar {
+   display: none;
+  }
+
+  .bests-div {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 65px) {
+  .bests-div {
+    margin-top: 120px;
   }
 }
