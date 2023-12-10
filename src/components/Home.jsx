@@ -22,9 +22,9 @@ export default function Home() {
     getBooks();
   }, [])
   
-  if (bookList) {
-    console.log(bookList);
-  }
+  // if (bookList) {
+  //   console.log(bookList);
+  // }
   return (
     <div className='home-container'>
       <Categories />
@@ -44,6 +44,7 @@ export default function Home() {
                     <p>{book.volumeInfo.title}</p>
 
                     <p>${book.saleInfo.listPrice.amount}</p>
+                    <p>{book.volumeInfo.categories}</p>
                   </div>)
               }
           })
@@ -56,7 +57,7 @@ export default function Home() {
           {bookList ? bookList.map((book, index) => {
             { if (Number(book.volumeInfo.averageRating) > 3 && book.saleInfo.listPrice) { 
               return (
-                <div className='best-book'>
+                <div className='best-book' key={index}>
                   <a target="_blank" href={book.volumeInfo.infoLink}>
                     <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
                   </a>
