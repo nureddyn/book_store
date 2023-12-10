@@ -76,10 +76,6 @@ a {
   background: #2980b9;
 }
 
-/* .separator {
-  width: 10%;
-} */
-
 .container {
   margin-top: 70px;
   display: flex;
@@ -103,9 +99,7 @@ a {
 
 .side-bar {
   margin-top: 5em;
-  /* height: 50em; */
   width: 20em;
-  /* border: solid black 1px; */
 }
 
 .category-list {
@@ -133,12 +127,9 @@ a {
   margin-top: 5em;
   margin-bottom: 20px;
   text-align: center;
-
-  /* border: solid black 1px; */
 }
 
 .home-div {
-  /* display: block; */
   height: 1000px;
 }
 
@@ -159,8 +150,6 @@ a {
   list-style: none;
   display: flex;
   align-items: flex-start;
-  /* justify-content: space-between;
-  flex-wrap: wrap; */
 }
 
 
@@ -169,28 +158,16 @@ a {
   flex-wrap: wrap;
 }
 
-/* .discounts {
-  margin-bottom: 15em;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background: pink;
-} */
-
 .disc-list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  /* border: solid black 1px; */
   height: 600px;
 }
 
 .disc-element {
-  /* border: solid black 1px; */
   margin-left: 5px;
   margin-right: 5px;
-  /* height: 40%; */
-  /* width: 15%; */
 }
 
 .book {
@@ -211,21 +188,17 @@ a {
 
 .bests-div {
   display: block;
-  /* flex-wrap: wrap; */
   border: solid black 1px;
   height: 600px;
   margin-top: 10%;
-  /* justify-content: center; */
 }
 
 .best-list {
   display: flex;
   justify-content: space-around;
-  /* flex-wrap: wrap; */
 }
 
 .best-book {
-  /* border: solid black 1px; */
   width:12%;
   height: 40%;
 }
