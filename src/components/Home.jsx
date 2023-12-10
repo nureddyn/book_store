@@ -4,7 +4,7 @@ export default function Home() {
   const API_KEY = process.env.REACT_APP_API_KEY;
 
   const [bookList, setBookList] = useState(null);
-  const getBooks = async (input) => {
+  const getBooks = async () => {
     const URL = "https://www.googleapis.com/books/v1/volumes?q=*";
     const maxResults = "maxResults=40";
     try {
@@ -31,7 +31,7 @@ export default function Home() {
         <div className='disc-list'>
           {bookList ? bookList.map((book, index) => {
             if (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail
-              && book.saleInfo.listPrice && Number(book.saleInfo.listPrice.amount) < 20
+              && book.saleInfo.listPrice && Number(book.saleInfo.listPrice.amount) < 20 && book.saleInfo.listPrice
               ) {
               return (
                 <div className='disc-element' key={index}>
@@ -39,6 +39,8 @@ export default function Home() {
                     <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
                   </a>
                   <p>{book.volumeInfo.title}</p>
+
+                  <p>${book.saleInfo.listPrice.amount}</p>
                 </div>)
             }
         })
@@ -49,13 +51,14 @@ export default function Home() {
       <h1 className='home-h'>Populars</h1>
       <div className='bests-div'>
         {bookList ? bookList.map((book, index) => {
-          { if (Number(book.volumeInfo.averageRating) > 3) { 
+          { if (Number(book.volumeInfo.averageRating) > 3 && book.saleInfo.listPrice) { 
             return (
               <div className='best-book'>
                 <a target="_blank" href={book.volumeInfo.infoLink}>
                   <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail} alt="image"></img>
                 </a>
                 <p>{book.volumeInfo.title}</p>
+                <p>${book.saleInfo.listPrice.amount}</p>
               </div>
               )}
           }
