@@ -88,9 +88,6 @@ a {
 .home-container {
   display: flex;
 }
-/* .home-div {
-  border: solid black 1px;
-} */
 
 .side-bar {
   margin-top: 5em;
@@ -108,6 +105,10 @@ a {
   height: 25em;
   overflow-y: auto;
   overflow: scroll;
+}
+
+.category-a {
+  color:#000;
 }
 
 .category-element {

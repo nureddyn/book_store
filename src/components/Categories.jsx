@@ -43,9 +43,11 @@ export default function Categories() {
         <ul className="category-list">
           {categories.length > 0 ? (
             categories.map((category, index) => (
+              <a className="category-a" target="_blank" href={`https://www.google.com/search?tbm=bks&q=${category}`}>
               <li className="category-element" key={index}>
                 <p>{category}</p>
               </li>
+              </a>
             ))
           ) : (
             <p>No categories found.</p>
