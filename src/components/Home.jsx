@@ -11,7 +11,6 @@ export default function Home() {
     try {
       const response = await fetch(`${URL}&key=${API_KEY}&${maxResults}`);
       const data = await response.json();
-      // console.log(data);
       setBookList(data.items);
     } catch (e) {
       console.error(e);
@@ -21,10 +20,7 @@ export default function Home() {
   useEffect (() =>{
     getBooks();
   }, [])
-  
-  // if (bookList) {
-  //   console.log(bookList);
-  // }
+
   return (
     <div className='home-container'>
       <Categories />
