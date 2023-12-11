@@ -1,4 +1,3 @@
-// SignBtn.jsx
 import React, { useContext } from "react";
 import { LogContext } from "../App";
 
@@ -7,7 +6,7 @@ export default function SignBtn() {
 
   return (
     <>
-      <button className="sign-button" onClick={() => { /* Your sign-up logic here */ }}>
+      <button className="sign-button">
         Sign Up
       </button>
     </>
