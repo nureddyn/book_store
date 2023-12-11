@@ -15,7 +15,6 @@ export default function SearchBooks() {
       const response = await fetch(`${URL}${input}&key=${API_KEY}`);
       const data = await response.json();
       setBookList(data.items);
-      // console.log(bookList);
     } catch (e) {
       console.error(e);
     }
@@ -30,16 +29,6 @@ export default function SearchBooks() {
       console.log(favoriteBooks);
     }
   };
-  
-  // useEffect(() => {
-  //   // TODO: Create book objects:
-  //   if (bookList) {
-  //     // const listOfBooks = buildBooks(bookList);
-  //     // console.log(listOfBooks)
-  //     // console.log(bookList)
-  //   }
-
-  // }, [bookList]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,7 +37,6 @@ export default function SearchBooks() {
 
   const handleSetTerm = (e) => {
     setSearchTerm(e.target.value);
-    // console.log(searchTerm);
   };
 
 
