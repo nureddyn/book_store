@@ -43,7 +43,7 @@ export default function Home() {
                       </div>)
                   }
             })
-            : "no data"
+            : ""
           }
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function Home() {
                 </div>
                 )}
             }
-          }) : "no data"}
+          }) : ""}
           </div>
         </div>
       </div>
